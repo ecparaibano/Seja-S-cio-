@@ -1,76 +1,81 @@
-.socios {
-  background: #0a1a3a;
-  padding: 50px 15px;
-  text-align: center;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b1c2d;
   color: #fff;
 }
 
-.socios h2 {
-  font-size: 26px;
-  margin-bottom: 5px;
+.topo {
+  text-align: center;
+  padding: 30px 15px;
 }
 
-.socios .sub {
-  color: #bcd;
-  margin-bottom: 30px;
+.logo {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.contador {
+  text-align: center;
+  background: #081423;
+  padding: 30px;
+}
+
+.numero {
+  font-size: 56px;
+  font-weight: bold;
+  color: gold;
 }
 
 .planos {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.plano {
-  background: #fff;
-  color: #000;
-  border-radius: 15px;
   padding: 20px;
 }
 
-.plano h3 {
-  font-size: 20px;
+.plano {
+  background: #10263f;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
-.valor {
-  display: block;
-  margin: 10px 0;
-  font-size: 18px;
-  font-weight: bold;
+.plano h3 {
+  margin-top: 0;
 }
 
 .plano ul {
-  list-style: none;
-  padding: 0;
-  text-align: left;
-}
-
-.plano li {
-  margin-bottom: 8px;
+  padding-left: 20px;
 }
 
 .plano button {
-  margin-top: 15px;
   width: 100%;
   padding: 12px;
+  margin-top: 10px;
   background: #1e90ff;
   border: none;
   border-radius: 8px;
   color: #fff;
   font-weight: bold;
-  font-size: 15px;
 }
 
-.plano.destaque {
-  border: 3px solid #1e90ff;
+.destaque {
+  border: 2px solid gold;
 }
 
-.plano.premium {
-  background: linear-gradient(135deg, #0a1a3a, #1e90ff);
-  color: #fff;
+.comprar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  padding: 20px;
+  text-align: center;
 }
 
-.plano.premium button {
+.comprar button {
   background: gold;
-  color: #000;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 10px;
 }
