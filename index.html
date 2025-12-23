@@ -1,58 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sócio Torcedor EC Paraibano</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b2a4a;
+      color: #fff;
+      text-align: center;
+    }
+
+    header {
+      padding: 20px;
+      background: #081f36;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    .contador {
+      margin: 20px;
+      font-size: 18px;
+    }
+
+    .planos {
+      max-width: 400px;
+      margin: auto;
+      padding: 10px;
+    }
+
+    .plano {
+      background: #111;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+
+    .plano h2 {
+      margin: 5px 0;
+    }
+
+    .preco {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+
+    .assinar {
+      background: #1e90ff;
+      color: #fff;
+    }
+
+    .comprar {
+      background: #00ffcc;
+      color: #000;
+      display: none;
+    }
+  </style>
+</head>
 <body>
 
-<header class="topo">
-  <img src="Polish_20251209_232909083.png" class="logo">
+<header>
   <h1>Planos Sócio Torcedor</h1>
   <p>Campeonato Paraibano 2026</p>
 </header>
 
-<section class="contador">
-  <h2>Rumo aos 5.000 sócios</h2>
-  <div id="totalSocios" class="numero">0</div>
-  <span>sócios cadastrados</span>
-</section>
-
-<section class="planos">
-
-  <div class="plano">
-    <h3>Carcará Avante</h3>
-    <strong>R$ 9,99 / mês</strong>
-    <ul>
-      <li>Apoio ao clube</li>
-      <li>Carteirinha digital</li>
-      <li>Conteúdos exclusivos</li>
-    </ul>
-    <button onclick="mostrarComprar('Avante')">Assinar agora</button>
-  </div>
-
-  <div class="plano">
-    <h3>Carcará Guerreiro</h3>
-    <strong>R$ 49,99 / mês</strong>
-    <ul>
-      <li>Todos do Avante</li>
-      <li>Desconto em ingressos</li>
-      <li>Prioridade na Geral</li>
-    </ul>
-    <button onclick="mostrarComprar('Guerreiro')">Assinar agora</button>
-  </div>
-
-  <div class="plano destaque">
-    <h3>Carcará Premium</h3>
-    <strong>R$ 139,99 / mês</strong>
-    <ul>
-      <li>Todos do Guerreiro</li>
-      <li>Entrada garantida</li>
-      <li>Experiências exclusivas</li>
-    </ul>
-    <button onclick="mostrarComprar('Premium')">Assinar agora</button>
-  </div>
-
-</section>
-
-<div id="comprarBox" class="comprar">
-  <p id="planoEscolhido"></p>
-  <button onclick="comprar()">Comprar</button>
+<div class="contador">
+  Rumo aos 5.000 sócios<br>
+  <strong><span id="contador">0</span> sócios cadastrados</strong>
 </div>
 
-<script src="main.js"></script>
+<div class="planos">
+
+  <div class="plano">
+    <h2>Carcará Avante</h2>
+    <div class="preco">R$ 9,99 / mês</div>
+    <button class="assinar" onclick="mostrarComprar(this)">Assinar agora</button>
+    <button class="comprar" onclick="comprar()">Comprar</button>
+  </div>
+
+  <div class="plano">
+    <h2>Carcará Guerreiro</h2>
+    <div class="preco">R$ 49,99 / mês</div>
+    <button class="assinar" onclick="mostrarComprar(this)">Assinar agora</button>
+    <button class="comprar" onclick="comprar()">Comprar</button>
+  </div>
+
+  <div class="plano">
+    <h2>Carcará Premium</h2>
+    <div class="preco">R$ 139,99 / mês</div>
+    <button class="assinar" onclick="mostrarComprar(this)">Assinar agora</button>
+    <button class="comprar" onclick="comprar()">Comprar</button>
+  </div>
+
+</div>
+
+<script>
+  let socios = localStorage.getItem("socios");
+  socios = socios ? parseInt(socios) : 0;
+
+  document.getElementById("contador").innerText = socios;
+
+  function mostrarComprar(botao) {
+    botao.style.display = "none";
+    botao.nextElementSibling.style.display = "block";
+  }
+
+  function comprar() {
+    socios++;
+    localStorage.setItem("socios", socios);
+    document.getElementById("contador").innerText = socios;
+    alert("Compra simulada com sucesso!");
+  }
+</script>
+
 </body>
+</html>
