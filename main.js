@@ -1,17 +1,16 @@
-let socios = localStorage.getItem("socios");
-socios = socios ? parseInt(socios) : 661;
+let total = localStorage.getItem("socios");
+total = total ? parseInt(total) : 0;
 
-document.getElementById("totalSocios").innerText = socios;
+document.getElementById("contador").innerText = total;
 
-function mostrarComprar(plano) {
-  document.getElementById("planoEscolhido").innerText =
-    "Plano selecionado: Carcará " + plano;
-  document.getElementById("comprarBox").style.display = "block";
+function mostrarComprar(botao) {
+  botao.style.display = "none";
+  botao.nextElementSibling.style.display = "block";
 }
 
 function comprar() {
-  socios++;
-  localStorage.setItem("socios", socios);
-  document.getElementById("totalSocios").innerText = socios;
+  total++;
+  localStorage.setItem("socios", total);
+  document.getElementById("contador").innerText = total;
   alert("Compra simulada com sucesso!");
 }
